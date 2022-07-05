@@ -133,3 +133,7 @@ $RECYCLE.BIN/
 _NCrunch*
 
 output.csv
+cachegrind.out.*
+perf.data
+perf.data.old
+flamegraph.svg
