@@ -1,4 +1,4 @@
-public abstract class Shape
+public abstract class AbstractShape
 {
     protected int id { get; set; }
 
