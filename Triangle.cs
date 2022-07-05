@@ -1,4 +1,4 @@
-public class Triangle : BasicShape
+public sealed class Triangle : BasicShape
 {
     private double sideLength, orientation;
     public Triangle(string[] fields)

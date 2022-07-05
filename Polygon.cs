@@ -1,11 +1,13 @@
-public class Polygon : AbstractShape
+public sealed class Polygon : AbstractShape
 {
     private List<Coords> coords;
+    private const int FIRST_X = 3;
+    private const int LAST_Y = 35;
     public Polygon(string[] fields)
     {
         id = int.Parse(fields[0]);
         coords = new List<Coords>();
-        for (var i = 3; i <= 35; i += 4)
+        for (var i = FIRST_X; i <= LAST_Y; i += 4)
         {
             if (fields[i] == "" || fields[i + 2] == "") break;
             var x = double.Parse(fields[i]);

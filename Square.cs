@@ -1,4 +1,4 @@
-public class Square : BasicShape
+public sealed class Square : BasicShape
 {
     private double sideLength, orientation;
     public Square(string[] fields)

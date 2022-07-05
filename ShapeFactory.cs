@@ -1,4 +1,4 @@
-public class ShapeFactory
+public sealed class ShapeFactory
 {
     public AbstractShape CreateShape(string record)
     {

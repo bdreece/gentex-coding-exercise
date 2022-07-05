@@ -1,4 +1,4 @@
-public class Circle : BasicShape
+public sealed class Circle : BasicShape
 {
     private double radius;
     public Circle(string[] fields)

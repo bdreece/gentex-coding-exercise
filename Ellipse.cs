@@ -1,4 +1,4 @@
-public class Ellipse : BasicShape
+public sealed class Ellipse : BasicShape
 {
     private double r1, r2, orientation;
     public Ellipse(string[] fields)
