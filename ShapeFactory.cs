@@ -1,6 +1,6 @@
 public class ShapeFactory
 {
-    public Shape CreateShape(string record)
+    public AbstractShape CreateShape(string record)
     {
         var fields = record.Split(',');
         var shapeType = fields[1];

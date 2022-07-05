@@ -1,4 +1,4 @@
-public class Polygon : Shape
+public class Polygon : AbstractShape
 {
     private List<Coords> coords;
     public Polygon(string[] fields)

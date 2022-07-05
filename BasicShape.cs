@@ -1,4 +1,4 @@
-public abstract class BasicShape : Shape
+public abstract class BasicShape : AbstractShape
 {
     protected double centerX { get; set; }
     protected double centerY { get; set; }
