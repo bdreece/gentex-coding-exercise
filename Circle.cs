@@ -1,5 +1,3 @@
-using System;
-
 public class Circle : BasicShape
 {
     private double radius;

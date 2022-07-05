@@ -1,6 +1,6 @@
 public class ShapeFactory
 {
-    public IShape? CreateShape(string record)
+    public Shape CreateShape(string record)
     {
         var fields = record.Split(',');
         var shapeType = fields[1];
@@ -14,10 +14,8 @@ public class ShapeFactory
                 return new Square(fields);
             case "Equilateral Triangle":
                 return new Triangle(fields);
-            case "Polygon":
-                return new Polygon(fields);
             default:
-                return null;
+                return new Polygon(fields);
         }
     }
 }
