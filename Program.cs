@@ -11,8 +11,6 @@
 
         public Program(string inputFile, string outputFile)
         {
-            Console.WriteLine("Input File: {0}", inputFile);
-            Console.WriteLine("Output File: {0}", outputFile);
             factory = new ShapeFactory();
             reader = new StreamReader(inputFile);
             writer = new StreamWriter(outputFile);
@@ -31,7 +29,6 @@
             foreach (string output in outputs)
             {
                 writer.WriteLine(output);
-                Console.WriteLine("Output Line: {0}", output);
             }
         }
 
@@ -39,7 +36,6 @@
         {
             return await Task.Run(() =>
             {
-                Console.WriteLine("Input Line: {0}", line);
                 var shape = factory.CreateShape(line);
                 var output = shape.IntoCsv();
                 return output;
