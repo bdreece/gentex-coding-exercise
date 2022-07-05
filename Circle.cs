@@ -3,10 +3,10 @@ public class Circle : BasicShape
     private double radius;
     public Circle(string[] fields)
     {
-        this.id = int.Parse(fields[0]);
-        this.centerX = double.Parse(fields[3]);
-        this.centerY = double.Parse(fields[5]);
-        this.radius = double.Parse(fields[7]);
+        id = int.Parse(fields[0]);
+        centerX = double.Parse(fields[3]);
+        centerY = double.Parse(fields[5]);
+        radius = double.Parse(fields[7]);
     }
     public override double GetArea()
     {

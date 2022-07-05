@@ -3,11 +3,11 @@ public class Triangle : BasicShape
     private double sideLength, orientation;
     public Triangle(string[] fields)
     {
-        this.id = int.Parse(fields[0]);
-        this.centerX = double.Parse(fields[3]);
-        this.centerY = double.Parse(fields[5]);
-        this.sideLength = double.Parse(fields[7]);
-        this.orientation = double.Parse(fields[9]);
+        id = int.Parse(fields[0]);
+        centerX = double.Parse(fields[3]);
+        centerY = double.Parse(fields[5]);
+        sideLength = double.Parse(fields[7]);
+        orientation = double.Parse(fields[9]);
     }
 
     public override double GetArea()
