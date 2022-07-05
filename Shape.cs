@@ -1,4 +1,4 @@
-public abstract class Shape : IShape
+public abstract class Shape
 {
     protected int id { get; set; }
 
@@ -11,6 +11,6 @@ public abstract class Shape : IShape
         var area = GetArea();
         var perimeter = GetPerimeter();
         var (centroidX, centroidY) = GetCentroid();
-        return String.Format("{0},Area,{1},Perimeter,{2},CentroidX,{3},CentroidY,{4},\r\n", id, area, perimeter, centroidX, centroidY);
+        return String.Format("{0},Area,{1},Perimeter,{2},CentroidX,{3},CentroidY,{4},", id, area, perimeter, centroidX, centroidY);
     }
 }
