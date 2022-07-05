@@ -3,6 +3,8 @@ namespace gentex
     public sealed class Polygon : AbstractShape
     {
         private List<Coords> coords;
+
+        // CSV Schema: ID, SHAPE_TYPE, X0, xxx.xx, Y0, ... , X9, xxx.xx, Y9, xxx.xx,
         private const int FIRST_X = 3;
         private const int LAST_Y = 35;
 
@@ -19,6 +21,12 @@ namespace gentex
             }
         }
 
+        /// <summary> Calculates the area of the polygon </summary>
+        /// <remarks>
+        ///     This implementation utilizes the shoelace formula for
+        ///     calculating the area of irregular polygons.
+        /// </remarks>
+        /// <returns> The area of the polygon </returns>
         public override double GetArea()
         {
             var area = 0d;
@@ -31,6 +39,13 @@ namespace gentex
             return area / 2;
         }
 
+        /// <summary> Calculates the perimeter of the polygon </summary>
+        /// <remarks>
+        ///     This implementation sums the Euclidean distances between
+        ///     each of the vertices, including from the last vertex
+        ///     to the first.
+        /// </remarks>
+        /// <returns> The perimeter of the polygon </returns>
         public override double GetPerimeter()
         {
             var perimeter = 0d;
@@ -40,11 +55,17 @@ namespace gentex
             {
                 perimeter += euclideanDistance(coords[i], coords[i + 1]);
             }
-            perimeter += determinant(coords[size - 1], coords[0]);
+            perimeter += euclideanDistance(coords[size - 1], coords[0]);
             return perimeter;
 
         }
 
+        /// <summary> Calculates the centroid of the polygon </summary>
+        /// <remarks>
+        ///     This implementation calculates the mean X and Y coordinates
+        ///     of every vertex in the polygon.
+        /// </remarks>
+        /// <returns> The centroid of the polygon </returns>
         public override (double, double) GetCentroid()
         {
             var (xAvg, yAvg) = (0d, 0d);

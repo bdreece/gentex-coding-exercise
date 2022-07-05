@@ -14,11 +14,21 @@ namespace gentex
             orientation = double.Parse(fields[11]);
         }
 
+        /// <summary> Calculates the area of the ellipse </summary>
+        /// <returns> The area of the ellipse </returns>
         public override double GetArea()
         {
             return Math.PI * r1 * r2;
         }
 
+        /// <summary> Calculates the perimeter of the ellipse </summary>
+        /// <returns> The perimeter of the ellipse </returns>
+        /// <remarks>
+        ///     This method of calculating the perimeter is accurate to
+        ///     within 5% of the true value. Other potential implementations
+        ///     may result in more accurate results at the cost of performance.
+        /// </remarks>
+        /// <see>https://www.mathsisfun.com/geometry/ellipse-perimeter.html</see>
         public override double GetPerimeter()
         {
             return 2 * Math.PI * Math.Sqrt((Math.Pow(r1, 2) + Math.Pow(r2, 2)) / 2);
