@@ -2,11 +2,13 @@
 {
     class Program
     {
-        static async Task Main(string[] args) => await new Program(args[1], args[2]).MainAsync();
         private StreamReader reader;
         private StreamWriter writer;
         private ShapeFactory factory;
         private List<Task<string>> tasks;
+
+        static async Task Main(string[] args) => await new Program(args[1], args[2]).MainAsync();
+
         public Program(string inputFile, string outputFile)
         {
             Console.WriteLine("Input File: {0}", inputFile);
