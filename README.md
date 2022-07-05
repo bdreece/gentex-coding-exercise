@@ -7,7 +7,7 @@ This is a submission repository for the Machine Vision Development Engineer codi
 My solution to the coding exercise is a .NET console application, which can be run with the following command:
 
 ```bash
-$ dotnet run gentex [INPUT_CSV] [OUTPUT_CSV]
+$ ./bin/Debug/net6.0/gentex -- [INPUT_CSV] [OUTPUT_CSV]
 ```
 
 ## Known bugs
