@@ -1,23 +1,27 @@
-public sealed class Ellipse : BasicShape
+namespace gentex
 {
-    private double r1, r2, orientation;
-    public Ellipse(string[] fields)
+    public sealed class Ellipse : BasicShape
     {
-        id = int.Parse(fields[0]);
-        centerX = double.Parse(fields[3]);
-        centerY = double.Parse(fields[5]);
-        r1 = double.Parse(fields[7]);
-        r2 = double.Parse(fields[9]);
-        orientation = double.Parse(fields[11]);
-    }
+        private double r1, r2, orientation;
 
-    public override double GetArea()
-    {
-        return Math.PI * r1 * r2;
-    }
+        public Ellipse(string[] fields)
+        {
+            id = int.Parse(fields[0]);
+            centerX = double.Parse(fields[3]);
+            centerY = double.Parse(fields[5]);
+            r1 = double.Parse(fields[7]);
+            r2 = double.Parse(fields[9]);
+            orientation = double.Parse(fields[11]);
+        }
 
-    public override double GetPerimeter()
-    {
-        return 2 * Math.PI * Math.Sqrt((Math.Pow(r1, 2) + Math.Pow(r2, 2)) / 2);
+        public override double GetArea()
+        {
+            return Math.PI * r1 * r2;
+        }
+
+        public override double GetPerimeter()
+        {
+            return 2 * Math.PI * Math.Sqrt((Math.Pow(r1, 2) + Math.Pow(r2, 2)) / 2);
+        }
     }
 }

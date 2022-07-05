@@ -1,10 +1,14 @@
-public readonly struct Coords
+namespace gentex
 {
-    public Coords(double x, double y)
+    public readonly struct Coords
     {
-        X = x;
-        Y = y;
+        public Coords(double x, double y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public double X { get; init; }
+        public double Y { get; init; }
     }
-    public double X { get; init; }
-    public double Y { get; init; }
 }

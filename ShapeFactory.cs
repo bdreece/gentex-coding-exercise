@@ -1,21 +1,24 @@
-public sealed class ShapeFactory
+namespace gentex
 {
-    public AbstractShape CreateShape(string record)
+    public sealed class ShapeFactory
     {
-        var fields = record.Split(',');
-        var shapeType = fields[1];
-        switch (shapeType)
+        public AbstractShape CreateShape(string record)
         {
-            case "Circle":
-                return new Circle(fields);
-            case "Ellipse":
-                return new Ellipse(fields);
-            case "Square":
-                return new Square(fields);
-            case "Equilateral Triangle":
-                return new Triangle(fields);
-            default:
-                return new Polygon(fields);
+            var fields = record.Split(',');
+            var shapeType = fields[1];
+            switch (shapeType)
+            {
+                case "Circle":
+                    return new Circle(fields);
+                case "Ellipse":
+                    return new Ellipse(fields);
+                case "Square":
+                    return new Square(fields);
+                case "Equilateral Triangle":
+                    return new Triangle(fields);
+                default:
+                    return new Polygon(fields);
+            }
         }
     }
 }
