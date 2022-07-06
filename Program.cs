@@ -5,7 +5,7 @@
         private StreamReader reader;
         private StreamWriter writer;
         private ShapeFactory factory;
-        private List<Task<string>> tasks;
+        private HashSet<Task<string>> tasks;
 
         // Pass INPUT_FILE and OUTPUT_FILE to main task
         static async Task Main(string[] args) => await new Program(args[1], args[2]).MainAsync();
@@ -15,26 +15,35 @@
             reader = new StreamReader(inputFile);
             writer = new StreamWriter(outputFile);
             factory = new ShapeFactory();
-            tasks = new List<Task<string>>();
+            tasks = new HashSet<Task<string>>();
         }
 
         public async Task MainAsync()
         {
             // Read all lines from input file
-            while (true)
+            while (!reader.EndOfStream)
             {
                 var line = await reader.ReadLineAsync();
-                if (line == null) break;
+                if (line == null || line == "") continue;
                 tasks.Add(Transform(line));
             }
 
+            /*
             // Calculate geometric properties
             string[] outputs = await Task.WhenAll(tasks);
 
             // Write all output lines to file.
             foreach (string output in outputs)
             {
-                writer.WriteLine(output);
+                await writer.WriteLineAsync(output);
+            }
+            */
+            var numTasks = tasks.Count;
+            for (var i = 0; i < numTasks; i++) {
+              var task = await Task.WhenAny(tasks);
+              tasks.Remove(task);
+              string output = await task;
+              await writer.WriteLineAsync(output);
             }
         }
 
