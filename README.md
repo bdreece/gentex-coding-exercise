@@ -9,12 +9,17 @@ My solution to the coding exercise is a .NET console application, which can be
 built and run with the following commands:
 
 ```bash
-dotnet build gentex
+git clone https://github.com/bdreece/gentex-coding-exercise
+cd gentex-coding-exercise
 dotnet run gentex input.csv output.csv
 ```
 
-## Known bugs
+## Some profiling stats
 
-There are a few bugs with this implementation that I've found:
+### Perf Flamegraph
 
-- Output CSV missing last ~50 shapes or so, not sure why.
+![Perf Flamegraph](flamegraph.svg)
+
+### Hyperfine Benchmark
+
+![Hyperfine Benchmark](hyperfine.png)
